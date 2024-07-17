@@ -1,0 +1,159 @@
+create database azshoe;
+show databases;
+use azshoe;
+create table design_dept (Emp_Id varchar(30), Name varchar(30),Position Varchar(30),Mobile_No varchar(10),Email_Id varchar(30),Address varchar(30));
+insert into design_dept values ('A1','Asrar','HR','9876543210','asrar786@gmail.com','12, 1st street,ambur'),
+('B1','Ahmed','Designer ','9876543210','ah786@gmail.com','12/2, 3rd street,ambur'),
+('B2','rahman','Designer','9876543210','ra786@gmail.com','#12,1st street,ambur'),
+('C1','Salaam','Assistant','9876543210','op786@gmail.com','12/2, new street,ambur'),
+('C2','muzammil','Assistant','9876543210','mu786@gmail.com','#12,mosque street,ambur'),
+('D1','abdulla','helper','9876543210','hl786@gmail.com','12/2, new street,ambur'),
+('D2','musthaq','Helper','9876543210','mu786@gmail.com','#32,mosque street,ambur');
+select *from design_dept;
+
+create table design_dept_salary_jan (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+insert into design_dept_salary_jan (Emp_Id,Name,Month,no_of_p,per_day_salary) values ('A1','Asrar','jan',27,700),('B1','Ahmed','jan',25,500),
+('B2','rahman','jan',30,500),('C1','Salaam','jan',28,350),('C2','muzammil','jan',30,350),('D1','abdulla','jan',27,250),('D2','musthaq','jan',30,250);
+select *from design_dept_salary_jan;
+create table design_dept_salary_feb (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+insert into design_dept_salary_feb (Emp_Id,Name,Month,no_of_p,per_day_salary) values ('A1','Asrar','feb',25,700),('B1','Ahmed','feb',28,500),
+('B2','rahman','feb',20,500), ('C1','Salaam','feb',23,350),('C2','muzammil','feb',22,350),('D1','abdulla','feb',21,250),('D2','musthaq','feb',24,250);
+
+create table design_dept_salary_mar (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+insert into design_dept_salary_mar (Emp_Id,Name,Month,no_of_p,per_day_salary) values ('A1','Asrar','mar',26,700),('B1','Ahmed','mar',21,500),
+('B2','rahman','mar',25,500), ('C1','Salaam','mar',27,350),('C2','muzammil','mar',27,350),('D1','abdulla','mar',21,250),('D2','musthaq','mar',29,250);
+create table design_dept_salary_apr (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+create table design_dept_salary_may (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+create table design_dept_salary_jun (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+
+
+
+
+create table production_dept (Emp_Id varchar(30), Name varchar(30),Position Varchar(30),Mobile_No varchar(10),Email_Id varchar(30),Address varchar(30));
+insert into production_dept values ('A1','anand','HR','9876543210','su786@gmail.com','12, 9st street,ambur'),
+('B1','ashwin','Machine Operator','9876543210','ns786@gmail.com','12/2, 3rd street,ambur'),
+('B2','saquib','Machine Oprator','9876543210','ra786@gmail.com','#12,1st street,ambur'),
+('C1','thimmarayan','Helper','9876543210','za786@gmail.com','#12,7st street,ambur'),
+('C2','sameeullah','Helper','9876543210','az786@gmail.com','#12,1st street,ambur');
+
+
+create table production_dept_salary_jan (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+insert into production_dept_salary_jan (Emp_Id,Name,Month,no_of_p,per_day_salary) values ('A1','anand','jan',27,700),
+('B1','ashwin','jan',25,500),('B2','saquib','jan',30,500),
+('C1','thimmarayan','jan',28,300),('C2','sameeullah','jan',30,300);
+
+create table production_dept_salary_feb (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+insert into production_dept_salary_feb (Emp_Id,Name,Month,no_of_p,per_day_salary) values ('A1','anand','feb',29,700),
+('B1','ashwin','feb',27,500),('B2','saquib','feb',30,500),
+('C1','thimmarayan','feb',28,300),('C2','sameeullah','feb',30,300);
+
+create table production_dept_salary_mar (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+insert into production_dept_salary_mar (Emp_Id,Name,Month,no_of_p,per_day_salary) values ('A1','anand','mar',28,700),
+('B1','ashwin','mar',29,500),('B2','saquib','mar',27,500),
+('C1','thimmarayan','mar',26,300),('C2','sameeullah','mar',30,300);
+
+create table production_dept_salary_apr (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+create table production_dept_salary_may (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+create table production_dept_salary_jun (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+
+
+
+create table quality_checking_dept (Emp_Id varchar(30), Name varchar(30),Position Varchar(30),Mobile_No varchar(10),Email_Id varchar(30),Address varchar(30));
+insert into quality_checking_dept values ('A1','Shuhaib','HR','9876543210','su786@gmail.com','12, 9st street,ambur'),
+('B1','sameed','Quality Checker','9876543210','ns786@gmail.com','12/2, 3rd street,ambur'),
+('B2','shazib','Quality Checker','9876543210','ra786@gmail.com','#12,1st street,ambur'),
+('C1','mujahid','Office Assistant','9876543210','za786@gmail.com','#12,7st street,ambur'),
+('C2','santhosh','Office Assistant','9876543210','az786@gmail.com','#12,1st street,ambur');
+
+
+create table quality_checking_dept_salary_jan (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+insert into quality_checking_dept_salary_jan (Emp_Id,Name,Month,no_of_p,per_day_salary) values ('A1','Shuhaib','jan',27,700),
+('B1','sameed','jan',25,500),('B2','shazib','jan',30,500),
+('C1','mujahid','jan',28,300),('C2','santhosh','jan',30,300);
+
+create table quality_checking_dept_salary_feb (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+insert into quality_checking_dept_salary_feb (Emp_Id,Name,Month,no_of_p,per_day_salary) values ('A1','Shuhaib','feb',29,700),
+('B1','sameed','feb',28,500),('B2','shazib','feb',26,500),
+('C1','mujahid','feb',28,300),('C2','santhosh','feb',24,300);
+
+create table quality_checking_dept_salary_mar (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+insert into quality_checking_dept_salary_mar (Emp_Id,Name,Month,no_of_p,per_day_salary) values ('A1','Shuhaib','mar',29,700),
+('B1','sameed','mar',29,500),('B2','shazib','mar',30,500),
+('C1','mujahid','mar',28,300),('C2','santhosh','mar',30,300);
+
+create table quality_checking_dept_salary_apr (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+create table quality_checking_dept_salary_may (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+create table quality_checking_dept_salary_jun (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+
+
+
+
+create table sales_dept (Emp_Id varchar(30), Name varchar(30),Position Varchar(30),Mobile_No varchar(10),Email_Id varchar(30),Address varchar(30));
+insert into sales_dept values ('A1','Sufiyan','HR','9876543210','sufiyan786@gmail.com','12, 9st street,ambur'),
+('B1','nadeem','Sales Executive','9876543210','ns786@gmail.com','12/2, 3rd street,ambur'),
+('B2','rasheed','Sales Executive','9876543210','ra786@gmail.com','#12,1st street,ambur'),
+('C1','azeem','Helper','9876543210','za786@gmail.com','#12,7st street,ambur'),
+('C2','dinesh','Helper','9876543210','az786@gmail.com','#12,1st street,ambur');
+
+
+create table sales_dept_salary_jan (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+insert into sales_dept_salary_jan (Emp_Id,Name,Month,no_of_p,per_day_salary) values ('A1','Sufiyan','jan',27,700),
+('B1','nadeem','jan',25,500),('B2','rasheed','jan',30,500),
+('C1','azeem','jan',28,300),('C2','dinesh','jan',30,300);
+
+create table sales_dept_salary_feb (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+insert into sales_dept_salary_feb (Emp_Id,Name,Month,no_of_p,per_day_salary) values ('A1','Sufiyan','feb',27,700),
+('B1','nadeem','feb',22,500),('B2','rasheed','feb',30,500),
+('C1','azeem','feb',23,300),('C2','dinesh','feb',20,300);
+
+create table sales_dept_salary_mar (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+insert into sales_dept_salary_mar (Emp_Id,Name,Month,no_of_p,per_day_salary) values ('A1','Sufiyan','mar',26,700),
+('B1','nadeem','mar',25,500),('B2','rasheed','mar',30,500),
+('C1','azeem','mar',28,300),('C2','dinesh','mar',28,300);
+
+create table sales_dept_salary_apr (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+create table sales_dept_salary_may (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+create table sales_dept_salary_jun (Emp_Id varchar(30),Name varchar(30),Month varchar(30),no_of_p int,per_day_salary int,
+gross_salary int generated always as (per_day_salary * no_of_p),hra int generated always as (gross_salary/100*15),epf int generated always as (gross_salary/100*8),net_salary int generated always as (gross_salary +hra-epf));
+
+select *from sales_dept_salary_apr;
+
+create table dd_login (userid varchar(30),password varchar(30));
+insert into dd_login value ('dd01','anser01'),('dd02','anser02');
+
+create table pd_login (userid varchar(30),password varchar(30));
+insert into pd_login value ('pd01','anser01'),('pd02','anser02');
+
+create table qcd_login (userid varchar(30),password varchar(30));
+insert into qcd_login value ('qcd01','anser01'),('qcd02','anser02');
+
+create table sd_login (userid varchar(30),password varchar(30));
+insert into sd_login value ('sd01','anser01'),('sd02','anser02');
+
+
+
+
+
